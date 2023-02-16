@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --dark-grey: #141414;
+  --light-grey: #888888;
+  --font: #f3f3f3;
+  --font-textarea: #f3f3f3;
+  --mr-red: #e82b23;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--dark-grey);
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  background: var(--dark-grey);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+.ai {
+  background: var(--black);
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+
+  background: var(--black);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background: var(--white);
+}
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+  color: var(--font);
+  font-size: 18px;
+  line-height: 2;
+  max-width: 100%;
+  overflow-x: scroll;
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-left: 20px;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+.form-container{
+  width: 100vw;
+  background: var(--dark-grey);
+}
+
+form {
+  width: 100%;
+  max-width: 1280px;
+  margin: 35px auto 0px auto;
+  padding: 0px;
+  background: var(--black);
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border-bottom: 2px solid transparent;
+
+}
+
+textarea {
+  width: 100%;
+
+  color: var(--font-textarea);
+  font-size: 16px;
+
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.input-box textarea {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid none;
+  background: var(--black);
+  border-radius: 0px;
+  outline: none;
+  color: var(--white);
+  transition: .5s all ease-in-out;
+}
+
+.input-box .placeholder-text {
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  pointer-events: none;
+  color: var(--light-grey);
+  transition: .5s
+}
+
+.input-box textarea:focus~.placeholder-text {
+  color: var(--black);
+  transform: translateX(10px) translateY(-7px);
+  font-size: 75%;
+  padding: 0 10px;
+  background: var(--mr-red);
+  /* border-left: 1px solid var(--mr-red);
+  border-right: 1px solid var(--mr-red); */
+}
+
+form:focus-within {
+  border-bottom: 2px solid var(--mr-red);
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* form img {
+  width: 30px;
+  height: 30px;
+} */
+
+form svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 30px;
+  margin-right: 20px;
+  transform: rotate(-45deg);
+
+}
+form svg g {
+  fill: var(--white);
+  transition: all .2s ease-in-out;
+}
+form button:hover svg g {
+  fill: var(--mr-red);
+  transition: all .2s ease-in-out;
+}
+
+.notice {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0px auto 35px auto;
+  padding: 10px;
+  background: none;
+  color: var(--light-grey);
+  font-size: 85%;
+  font-weight:300;
+  opacity: .6;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* gap: 5px; */
+}
+
+.notice .notice-wingman{
+  color: var(--mr-red);
+}
+
+
+.input-box{
+  position: relative;
+  width: 100%;
+}
+
