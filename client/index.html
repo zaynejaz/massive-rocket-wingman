@@ -24,13 +24,13 @@
       <div id="chat_container"></div>
 
       <div class="form-container">
-        <form>
+        <form id="main-form">
           <div class="input-box">
-            <textarea name="prompt" rows="1" cols="1" placeholder=""></textarea>
+            <textarea name="prompt" rows="1" cols="1" placeholder="" id="txtSearch"></textarea>
             <span class="placeholder-text">What can I help you with?</span>
           </div>
           
-          <button type="submit">
+          <button type="submit" id="btnSearch">
             <!-- <img class="send-button"src="assets/send.svg" /> -->
             <svg version="1.0"
                  xmlns="http://www.w3.org/2000/svg"
@@ -53,5 +53,6 @@
       </div>
     </div>
     <script type="module" src="script.js"></script>
+    <script type="module" src="analytics.js"></script>
   </body>
 </html>
